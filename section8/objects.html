@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        /*
+        const product = {
+            name: 'socks',
+            price: 10.90
+        };
+
+        console.log(product);
+        console.log(product.name);
+
+        product.name = 'jeans'
+        product.price = 99.00
+
+        console.log(product);
+        console.log(product.name);
+
+        product.newProperty = true; // adds a new property to the object
+        delete product.newProperty; // deletes a property
+        */
+
+        const product = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            // function inside an object => Method
+            // it's like 'console.log();' => console is an 'object' and log is a 'function'
+            func: function functionOne() {
+                console.log('Function inside object!');  
+            }
+        };
+
+        console.log(product.name);
+        console.log(product['name']);
+        console.log(product['delivery-time']);
+
+        console.log(product.rating.count);
+        product.func();
+
+    </script>
+</body>
+</html>
