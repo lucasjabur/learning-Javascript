@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+
+    <script>
+        // booleans values: true ; false
+
+        console.log(5 == '5.00');
+        // output = true
+        // '==' converts the two variables into the same type
+        
+        console.log(5 === '5.00');
+        // output = false
+        // '===' consider the variables' types to make the comparison
+    
+        console.log(3 > 5 - 5);
+        // output = true
+        // '5 - 5' is done first, and then the comparison is made
+        // comparison operators have low priority over math operators
+    
+        if (true)
+            console.log('if statement'); // this line is called 'branch'
+
+        else if (true) {
+            console.log('else if statement');
+        }
+        else { 
+            console.log('else statement');
+        }
+
+
+
+        if (0) { // '0' in JS is a falsy value (false, 0, '', NaN, undefined, null)
+            console.log('truthy')
+        }
+
+        const cartQuantity = 5;
+
+        if (cartQuantity) { // 'cartQuantity' = truthy value
+            console.log('Cart has products.');
+        }
+
+
+        true ? 'truthy' : 'falsy'; // ternary operator
+
+        const result = 0 ? 'truthy' : 'falsy';
+        console.log(result);
+
+
+        // Guard Operator:
+
+        const variable3 = false && 'hello'; // 'variable3' will receive the value 'false'
+        const variable4 = 5 && 'hello'; // 'variable4' will receive the value 'hello'
+        // the two lines above means this:
+        // if the first value is a falsy value, then the variable receives the first value
+        // else it receives the second value.
+
+
+        // Default Operator:
+
+        const currency = 'BRL' || 'USD'; // 'variable5' will receive the value 'BRL'
+        const currency2 = undefined || 'USD'; // 'variable6' will receive the value 'USD'
+        // the two lines above means this:
+        // if the first value is a falsy value, then the variable receives the second value
+        // else it receives the first value.
+
+
+        // ***  The shortcuts above represents the 'Truth-Tables' of operations 'AND' and 'OR' ***
+    </script>
+</body>
+</html>
