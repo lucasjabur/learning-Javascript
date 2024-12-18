@@ -26,11 +26,11 @@
 
     <script>
         
-        const gameScore = {
-            victory: 0,
-            defeat: 0,
-            tie: 0
-        };
+        let gameScore = JSON.parse(localStorage.getItem('gameScore')) || {
+                victory: 0,
+                defeat: 0,
+                tie: 0
+            };
 
         function resetScore() {
             gameScore.victory = 0;
@@ -39,6 +39,16 @@
 
             alert(`Scores were reseted!\nVictories: ${gameScore.victory}  Defeats: ${gameScore.defeat}  Ties: ${gameScore.tie}`); 
         }
+
+        /*
+        if (!gameScore) { // the same as: 'if (gameScore === null) {}'
+            gameScore = {
+                victory: 0,
+                defeat: 0,
+                tie: 0
+            };
+        }
+        */
 
         function playGame(playerChoice) {
             const computerChoice = pickComputerChoice();
@@ -99,7 +109,8 @@
                 }
             }
 
-            alert(`You picked ${playerChoice}, the computer picked ${computerChoice}. ${result}\nVictories: ${gameScore.victory}  Defeats: ${gameScore.defeat}  Ties: ${gameScore.tie}`); 
+            alert(`You picked ${playerChoice}, the computer picked ${computerChoice}. ${result}\nVictories: ${gameScore.victory}  Defeats: ${gameScore.defeat}  Ties: ${gameScore.tie}`);
+            localStorage.setItem('gameScore', JSON.stringify(gameScore));
         }
 
 

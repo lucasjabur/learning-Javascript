@@ -24,7 +24,12 @@
 
         product.newProperty = true; // adds a new property to the object
         delete product.newProperty; // deletes a property
+
         */
+
+
+
+        /*
 
         const product = {
             name: 'shirt',
@@ -46,6 +51,103 @@
 
         console.log(product.rating.count);
         product.func();
+
+
+        // Learning JSON Built-In Object:
+
+        console.log(JSON.stringify(product)); // JSON.stringify() transforms a JS object into JSON
+                                              // typeof 'JSON.stringify(product)' => string
+        
+        const jsonString = JSON.stringify(product); // JSON.parse() transforms a JSON object into a JS object
+        console.log(JSON.parse(jsonString));
+
+
+        // Learning localStorage Buit-In Object:
+
+        // ATENTION: localStorage ONLY supports strings.
+        // JSON.stringfy() can be used to manipulate non-string values with localStorage
+
+        localStorage.setItem('message', 'hello'); // saves the message into localStorage
+
+        console.log(localStorage.getItem('message')); // get the message saved before
+
+        */
+
+
+
+        // Learning about Auto-Boxing:
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        // How can strings have properties and methods since they're not objects?
+        // Answear: Auto-Boxing
+
+        // the string is wrapped automatically in a special object first
+        // Auto-Boxing also works with numbers and booleans, for example
+
+
+        // Learning that objects are references:
+
+        const object1 = {
+            message: 'hello'
+        };
+
+        const object2 = object1;
+
+        // the value of 'object1' is actually a reference to the parameters that were signed to the variable.
+        // it is the same thing with 'object2 = object1;', since 'object2' receives a reference to the value of object1.
+
+        // the value is stored in the heap memory, just as using dynamic alocation in C language.
+
+        object1.message = 'Good Job';
+        console.log(object1);
+
+        // since 'object2' receives a reference from 'object1', when we try to change its value, the value of the original
+        // object is changed as well. This happens because they share the same object by the refenrece given to them.
+
+        object2.message = 'Wow!';
+        console.log(object1);
+
+        // that means as well that objects cannot be compared to each other, even though they have the same values
+
+        const object3 = {
+            message: 'Wow!'
+        };
+
+        console.log(object1 === object3); // that's 'false'
+
+        // that happen because 'object3' points to another memory adress, different from that one pointed by 'object1'
+
+
+
+        // Learning shortcuts for objects:
+
+        // Destructuring shortcut:
+
+        const object4 = {
+            message: 'Wow!',
+            price: 799
+        };
+
+        const { message, price } = object4; // that's the same thing as: 'const message = object4.message;'
+
+        console.log(message);
+        console.log(price);
+
+
+        // Shorthand Propoerty and SHorthand Method:
+
+        const object5 = {
+            message, // that's the same thing as: 'message: message'. We already have the shortcut for 'message'
+            method() { // that's the same thing as: 'method: function function1() { console.log('method'); }
+                console.log('method');
+            }
+        };
+
+        console.log(object5);
+        object5.method();
+
 
     </script>
 </body>
