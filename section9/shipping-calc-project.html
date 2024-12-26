@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Calculator Project</title>
+</head>
+<body>
+  <h1>Shipping Calculator</h1>
+  <h4>Order under $40,00 = + $10,00 shipping</h4>
+  <h4>Order over $40,00 = FREE shipping</h4>
+  <input id="js-input" type="number" placeholder="Cost of Order" onkeydown="handleCostKeydown(event)">
+  <button class="js-calculate-button" onclick="calculateShipping()">Calculate</button>
+  <h4 class="js-final-value"></h4>
+
+  <script>
+
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+        calculateShipping();
+      }
+    }
+
+    function calculateShipping() {
+      const orderCost = Number(document.getElementById("js-input").value);
+
+      if (orderCost === 0) {
+        document.querySelector(".js-final-value").innerHTML = `Enter a valid value!`;
+      } 
+      
+      else if (orderCost < 40) {
+        const finalValue = orderCost + 10;
+        document.querySelector(".js-final-value").innerHTML = `Total cost: $${finalValue}`;
+      } 
+      
+      else {
+        document.querySelector(".js-final-value").innerHTML = `Total cost: $${orderCost}`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+</head>
+<body>
+  <button>hello</button>
+  <button class="js-button">Second button</button>
+
+  <script>
+
+    window // represents the window browser
+
+    window.document // it's the same thing as 'document'
+    window.console // since 'window' represents the entire window browser, the '.console' gets the browser console
+    window.console.log(); // this can be used as well to print stuff
+    window.alert // represents the pop-ups
+
+    /*
+    console.log(document.querySelector('button').innerHTML); // lets us get any element from the page and put it inside Javascript
+    // every HTML element has a property '.innerHTML'
+
+    document.querySelector('button').innerHTML = 'Changed' // now the button show the text 'Changed'
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement); // example of combination of JS and HTML together
+    */
+
+
+
+    /*
+    console.log(document.title);
+    document.title = 'Changed';
+    
+    console.log(document.body); // we can have HTML inside Javascript. The DOM combines JS and HTML together and it gives JS control of the webpage
+    console.log(typeof document.body);
+
+    console.log(document.body.innerHTML); // prints all the HTML responsible for the webpage
+    document.body.innerHTML = '<button>New HTML</button>';
+    */
+
+
+
+
+    /*
+    document.body.innerHTML = 'hello'; // built-in object provided by JS   
+    document.title = 'Good Job!' // the 'document' object represents/models the webpage
+    */
+  </script>
+</body>
+</html>
